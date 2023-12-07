@@ -140,8 +140,8 @@ class Welcome extends Controller {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'ricofontecilla30@gmail.com';  
-        $mail->Password = 'bbwm taur mtef uwdg'; 
+        $mail->Username = 'laudenciamj3@gmail.com';  
+        $mail->Password = 'ymqq ixfe bzzv sqgw'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
         $mail->Port = 587;  
 
@@ -176,15 +176,15 @@ class Welcome extends Controller {
 		$mail->isSMTP();
 		$mail->Host = 'smtp.gmail.com'; 
 		$mail->SMTPAuth = true;
-		$mail->Username = 'ricofontecilla30@gmail.com';  
-		$mail->Password = 'bbwm taur mtef uwdg';  
+		$mail->Username = 'laudenciamj3@gmail.com';  
+		$mail->Password = 'ymqq ixfe bzzv sqgw';  
 		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
 		$mail->Port = 587;  
 	
 
-		$from = 'ricofontecilla30@gmail.com'; 
-		$mail->setFrom($from, 'Rico'); 
-		$mail->addAddress( $to);  
+		$from = 'laudenciamj3@gmail.com'; 
+		$mail->setFrom($from, 'Jober'); 
+		$mail->addAddress( $to); 
 		// var_dump($email);
 		$mail->isHTML(true);
 		$mail->Subject = 'Account Verification Code';

@@ -11,50 +11,57 @@
   <link rel="stylesheet" href="../public/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../public/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../public/css/vertical-layout-light/style.css">
-  <!-- Custom styles for login page -->
   <style>
     body {
-      background-color: #f8f9fa; /* Example background color */
+      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .container-scroller {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100vh;
     }
 
     .auth-form-light {
       background-color: #ffffff;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      border-radius: 5px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
     }
 
     h4, h6 {
-      color: #495057; /* Example text color */
+      color: #333333;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     input.form-control {
-      border: 1px solid #ced4da; /* Example border color */
+      border: 1px solid #ced4da;
       border-radius: 5px;
+      padding: 15px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .btn-primary {
-      background-color: #007bff; /* Example button color */
-      color: #ffffff; /* Example text color */
+      background-color: #4CAF50;
+      color: #ffffff;
       border-radius: 5px;
-      padding: 10px 20px;
+      padding: 15px 20px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .btn-primary:hover {
-      background-color: #0056b3; /* Example hover color */
+      background-color: #45a049;
     }
 
     .mt-4 {
@@ -66,7 +73,7 @@
     }
 
     .text-primary {
-      color: #007bff; /* Example primary color */
+      color: #4CAF50;
     }
   </style>
   <!-- endinject -->
@@ -75,44 +82,33 @@
 
 <body>
   <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row w-100 mx-0">
-          <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <h4 class="text-center">Hello! Let's get started</h4>
-              <h6 class="font-weight-light text-center">Sign in to continue.</h6>
-              <?php $LAVA =& lava_instance(); ?>
-              <?php echo $LAVA->form_validation->errors(); ?>    
-              <?php if (isset($error_message)) { ?>
-                <div class="alert alert-danger"><?= $error_message; ?></div>
-              <?php } ?>
-              <?php if (isset($success_message)) { ?>
-                <div class="alert alert-success"><?= $success_message; ?></div>
-              <?php } ?>
-              <form action="<?= site_url('validate_login'); ?> " method="post">
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" placeholder="Email" name="email">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" placeholder="Password" name="password">
-                </div>
-                <div class="mt-3 d-flex justify-content-center">
-                  <div><input type="submit" value="Login" class="btn btn-primary" /></div>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register" class="text-primary">Create</a>
-                </div>
-              </form>
-            </div>
-          </div>
+    <div class="auth-form-light">
+      <h4>Welcome</h4>
+      <h6>Sign in to continue.</h6>
+      <?php $LAVA =& lava_instance(); ?>
+      <?php echo $LAVA->form_validation->errors(); ?>    
+      <?php if (isset($error_message)) { ?>
+        <div class="alert alert-danger"><?= $error_message; ?></div>
+      <?php } ?>
+      <?php if (isset($success_message)) { ?>
+        <div class="alert alert-success"><?= $success_message; ?></div>
+      <?php } ?>
+      <form action="<?= site_url('validate_login'); ?> " method="post">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" name="email" required>
         </div>
-      </div>
-      <!-- content-wrapper ends -->
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" name="password" required>
+        </div>
+        <div class="mt-4">
+          <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+        <div class="text-center mt-4 font-weight-light">
+          Don't have an account? <a href="register" class="text-primary">Create</a>
+        </div>
+      </form>
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
